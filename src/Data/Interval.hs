@@ -25,7 +25,7 @@ data Interval a
 
 instance (Enum a, Show a) => Show (Interval a) where
     show All = "[..]"
-    show (low :-> high) = show [low..high]
+    show (low :-> high) = "[" ++ show low ++ "," ++ show high ++ "]"
     show (Above low) = "[" ++ show low ++ "," ++ show (succ low) ++ "..]"
     show (Below high) = "[.." ++ show (pred high) ++ "," ++ show high ++ "]"
     show (Intersect a b) = "(" ++ show a ++ " ∩ " ++ show b ++ ")"
